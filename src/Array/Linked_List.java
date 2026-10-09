@@ -1,5 +1,5 @@
 
-package Array;
+package OOPS;
 
 import java.util.*;
 
@@ -94,5 +94,34 @@ public class Linked_List {
         list.clear();
         System.out.println("clear(): " + list);
         System.out.println("isEmpty() after clear: " + list.isEmpty());
+
+        // 17. Add an element after a given element
+        list.add(10);
+        list.add(20);
+        list.add(30);
+        list.add(40);
+
+        int target = 20;
+        int newElement = 25;
+        boolean found = false;
+
+        ListIterator<Integer> li = list.listIterator();
+
+        while (li.hasNext()) {
+            int current = li.next();
+
+            if (current == target) {
+                li.add(newElement); // Adds after the target element
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            System.out.println("After inserting " + newElement
+                    + " after " + target + ": " + list);
+        } else {
+            System.out.println(target + " not found in the list.");
+        }
     }
 }
